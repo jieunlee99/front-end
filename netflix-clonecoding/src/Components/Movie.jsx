@@ -75,9 +75,14 @@ const VoteAverage = styled.div`
 function Movie({ movie, onClick }) {
   const poster = `https://image.tmdb.org/t/p/w1280${movie.poster_path}`;
   const [isTooltipVisible, setTooltipVisible] = useState(false);
+  // isTooltipVisible 사용하도록 밑 코드 수정 필요 (warning)
 
-  const mouseEnter = () => setTooltipVisible(true);
-  const mouseLeave = () => setTooltipVisible(false);
+  const mouseEnter = () => {
+    setTooltipVisible((prevTooltipVisible) => !prevTooltipVisible);
+  };
+  const mouseLeave = () => {
+    setTooltipVisible((prevTooltipVisible) => !prevTooltipVisible);
+  };
 
   return (
     <MovieContainer
@@ -97,7 +102,11 @@ function Movie({ movie, onClick }) {
           <MovieInfoText>{movie.vote_average}</MovieInfoText>
         </VoteAverage>
       </MovieInfo>
-      <Details className="details">
+      <Details
+        className="details"
+        onMouseEnter={mouseEnter}
+        onMouseLeave={mouseLeave}
+      >
         <DetailsText>{movie.title}</DetailsText>
         <DetailsText>{movie.overview}</DetailsText>
       </Details>

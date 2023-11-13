@@ -4,11 +4,14 @@ import styled from "styled-components";
 
 const LoginButton = styled.button`
   border-radius: ${(props) => props.radius || "0px"};
+  border: none;
   width: 80px;
   height: 40px;
   margin-left: 20px;
   margin-right: 20px;
   display: inline;
+  background: white;
+  font-size: 17px;
 `;
 
 const LogintText = styled.p`
