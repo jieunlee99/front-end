@@ -36,6 +36,8 @@ function LoginControl() {
   );
 }
 
+// 5주차 내용이라 주석 처리
+
 // class LoginControl extends Component {
 //   constructor() {
 //     super();
