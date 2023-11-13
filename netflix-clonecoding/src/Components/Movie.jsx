@@ -26,7 +26,7 @@ const Details = styled.div`
   position: absolute;
   top: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  display: none;
+  // display: none;
 `;
 
 const DetailsText = styled.p`
@@ -87,13 +87,16 @@ function Movie({ movie, onClick }) {
   return (
     <MovieContainer
       className="movie"
-      onMouseEnter={mouseEnter}
-      onMouseLeave={mouseLeave}
       onClick={() => {
         onClick(movie.id);
       }}
     >
-      <MoviePoster src={poster} alt={movie.title} />
+      <MoviePoster
+        onMouseEnter={mouseEnter}
+        onMouseLeave={mouseLeave}
+        src={poster}
+        alt={movie.title}
+      />
       <MovieInfo>
         <Title>
           <TitleText>{movie.title}</TitleText>
@@ -102,14 +105,16 @@ function Movie({ movie, onClick }) {
           <MovieInfoText>{movie.vote_average}</MovieInfoText>
         </VoteAverage>
       </MovieInfo>
-      <Details
-        className="details"
-        onMouseEnter={mouseEnter}
-        onMouseLeave={mouseLeave}
-      >
-        <DetailsText>{movie.title}</DetailsText>
-        <DetailsText>{movie.overview}</DetailsText>
-      </Details>
+      {isTooltipVisible ? (
+        <Details
+          className="details"
+          onMouseEnter={mouseEnter}
+          onMouseLeave={mouseLeave}
+        >
+          <DetailsText>{movie.title}</DetailsText>
+          <DetailsText>{movie.overview}</DetailsText>
+        </Details>
+      ) : null}
     </MovieContainer>
   );
 }
