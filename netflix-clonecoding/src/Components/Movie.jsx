@@ -72,7 +72,7 @@ const VoteAverage = styled.div`
   text-align: right;
 `;
 
-function Movie({ movie }) {
+function Movie({ movie, onClick }) {
   const poster = `https://image.tmdb.org/t/p/w1280${movie.poster_path}`;
   const [isTooltipVisible, setTooltipVisible] = useState(false);
 
@@ -84,6 +84,9 @@ function Movie({ movie }) {
       className="movie"
       onMouseEnter={mouseEnter}
       onMouseLeave={mouseLeave}
+      onClick={() => {
+        onClick(movie.id);
+      }}
     >
       <MoviePoster src={poster} alt={movie.title} />
       <MovieInfo>

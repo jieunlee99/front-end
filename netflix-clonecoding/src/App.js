@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Celebrity, Home, Movies, NotFound, TV } from "./pages";
 import Header from "./Components/Header.jsx";
+import MovieDetail from "./pages/MovieDetail.jsx";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Movies" element={<Movies />} />
+          <Route path="/Movies/:movieId" element={<MovieDetail />} />
           <Route path="/TV" element={<TV />} />
           <Route path="/Celebrity" element={<Celebrity />} />
           <Route path="/NotFound" element={<NotFound />} />
