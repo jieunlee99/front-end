@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+// import React, { Component } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const LoginButton = styled.button`
@@ -15,32 +16,49 @@ const LogintText = styled.p`
   display: inline;
 `;
 
-class LoginControl extends Component {
-  constructor() {
-    super();
-    this.state = {
-      Login: false, // 초기값: 로그아웃
-    };
-  }
+function LoginControl() {
+  const [login, setLogin] = useState(false);
 
-  handleToggleClick = () => {
-    this.setState((prevState) => ({
-      Login: !prevState.Login, // 로그인 표시를 토글로
-    }));
+  const handleToggleClick = () => {
+    setLogin((prevLogin) => !prevLogin); // on->off or off->on
   };
 
-  render() {
-    return (
-      <div>
-        <LoginButton radius="40px" onClick={this.handleToggleClick}>
-          {this.state.Login ? "로그아웃" : "로그인"}
-        </LoginButton>
-        <LogintText>
-          {this.state.Login ? "환영합니다!" : "로그인 해주세요!"}
-        </LogintText>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <LoginButton radius="40px" onClick={handleToggleClick}>
+        {login ? "로그아웃" : "로그인"}
+      </LoginButton>
+      <LogintText>{login ? "환영합니다!" : "로그인 해주세요!"}</LogintText>
+    </div>
+  );
 }
+
+// class LoginControl extends Component {
+//   constructor() {
+//     super();
+//     this.state = {
+//       Login: false, // 초기값: 로그아웃
+//     };
+//   }
+
+//   handleToggleClick = () => {
+//     this.setState((prevState) => ({
+//       Login: !prevState.Login, // 로그인 표시를 토글로
+//     }));
+//   };
+
+//   render() {
+//     return (
+//       <div>
+//         <LoginButton radius="40px" onClick={this.handleToggleClick}>
+//           {this.state.Login ? "로그아웃" : "로그인"}
+//         </LoginButton>
+//         <LogintText>
+//           {this.state.Login ? "환영합니다!" : "로그인 해주세요!"}
+//         </LogintText>
+//       </div>
+//     );
+//   }
+// }
 
 export default LoginControl;

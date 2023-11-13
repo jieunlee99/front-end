@@ -14,7 +14,7 @@ function App() {
           <Route path="/Movies/:movieId" element={<MovieDetail />} />
           <Route path="/TV" element={<TV />} />
           <Route path="/Celebrity" element={<Celebrity />} />
-          <Route path="/NotFound" element={<NotFound />} />
+          <Route path={"*"} element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>
