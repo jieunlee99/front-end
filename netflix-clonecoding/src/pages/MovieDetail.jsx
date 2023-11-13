@@ -4,7 +4,10 @@ import styled from "styled-components";
 
 const MovieContainer = styled.div`
   display: flex;
-  justify-content: center;
+  // justify-content: center;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 5%;
   align-items: top;
   height: 100vh; /* 화면 전체 높이를 기준으로 중앙에 정렬 */
 `;

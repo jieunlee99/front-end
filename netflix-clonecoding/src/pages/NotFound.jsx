@@ -3,9 +3,11 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 const NotFoundContainer = styled.div`
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 5%;
   display: flex;
   flex-direction: column;
-  align-items: center; /* 중앙 정렬 */
   height: 100vh; /* 화면 전체 높이를 기준으로 중앙에 정렬 */
 `;
 
@@ -16,6 +18,7 @@ const NotFoundH1 = styled.h1`
 `;
 
 const NotFoundDiv = styled.div`
+  margin-left: 5px;
   display: block;
   font-family: sans-serif;
   text-align: left; /* 왼쪽 정렬 */
@@ -29,6 +32,8 @@ const NotFoundHome = styled.button`
   background: none;
   cursor: pointer;
   font-size: large;
+  text-align: left;
+  margin-right: 25%; /* 우측 1/4 마진 */
 `;
 
 export default function NotFound() {
