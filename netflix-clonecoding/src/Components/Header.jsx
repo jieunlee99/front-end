@@ -49,7 +49,7 @@ export default function Header() {
             <Link to="/Movies">영화</Link>
           </NavItem>
           <NavItem>
-            <Link to="/TV">TV 프로그램</Link>
+            <Link to="/TVs">TV 프로그램</Link>
           </NavItem>
           <NavItem>
             <Link to="/Celebrity">인물</Link>

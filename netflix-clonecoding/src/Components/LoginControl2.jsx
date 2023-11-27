@@ -1,7 +1,7 @@
 // import React, { Component } from "react";
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import styled from "styled-components";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const LoginButton = styled.button`
   border-radius: ${(props) => props.radius || "0px"};
@@ -17,7 +17,7 @@ const LoginButton = styled.button`
 
 function LoginControl2() {
   const navigate = useNavigate();
-  const [login, setLogin] = useState(false);
+  // const [login, setLogin] = useState(false);
 
   const handleToggleClick = () => {
     // setLogin((prevLogin) => !prevLogin); // on->off or off->on
