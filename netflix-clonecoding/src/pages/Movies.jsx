@@ -5,7 +5,11 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 const MovieListContainer = styled.div`
-  /* 스타일 내용 */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  // gap: 10px; /* Adjust the value for the desired horizontal spacing */
+  // padding: 0 20px; /* Adjust the value for the desired padding on both sides */
 `;
 
 function Movies() {
