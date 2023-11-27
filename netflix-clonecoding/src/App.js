@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Celebrity, Home, Movies, NotFound, TV } from "./pages";
+import { Celebrity, Home, Movies, NotFound, TV, Login } from "./pages";
 import Header from "./Components/Header.jsx";
 import MovieDetail from "./pages/MovieDetail.jsx";
 
@@ -14,6 +14,7 @@ function App() {
           <Route path="/Movies/:movieId" element={<MovieDetail />} />
           <Route path="/TV" element={<TV />} />
           <Route path="/Celebrity" element={<Celebrity />} />
+          <Route path="/Login" element={<Login />} />
           <Route path={"*"} element={<NotFound />} />
         </Routes>
       </BrowserRouter>

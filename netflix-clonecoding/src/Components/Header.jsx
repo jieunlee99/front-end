@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import LoginControl from "./LoginControl";
+// import LoginControl from "./LoginControl";
+import LoginControl2 from "./LoginControl2";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -54,7 +55,8 @@ export default function Header() {
             <Link to="/Celebrity">인물</Link>
           </NavItem>
         </NavList>
-        <LoginControl />
+        {/* <LoginControl /> */}
+        <LoginControl2 />
       </div>
     </HeaderContainer>
   );
